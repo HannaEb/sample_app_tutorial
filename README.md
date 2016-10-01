@@ -16,6 +16,7 @@ is available jointly under the MIT License and the Beerware License. See
 To get started with the app, clone the repo and then install the needed gems:
 
 ```
+$ git@github.com:HannaEb/sample_app_tutorial.git
 $ bundle install --without production
 ```
 

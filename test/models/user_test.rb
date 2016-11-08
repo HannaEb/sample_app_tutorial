@@ -91,6 +91,7 @@ class UserTest < ActiveSupport::TestCase
      assert_not marley.following?(luni)
      marley.follow(luni)
      assert marley.following?(luni)
+     assert luni.followers.include?(marley)
      marley.unfollow(luni)
      assert_not marley.following?(luni)
    end

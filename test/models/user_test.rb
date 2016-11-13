@@ -96,4 +96,19 @@ class UserTest < ActiveSupport::TestCase
      assert_not marley.following?(luni)
    end
 
+   test "feed should have the right posts" do
+    marley = users(:marley)
+    luni = users(:luni)
+    trine = users(:trine)
+    trine.microposts.each do | post_following |
+      assert marley.feed.include?(post_following)
+    end
+    marley.microposts.each do | post_self |
+      assert marley.feed.include?(post_self)
+    end
+    luni.microposts.each do | post_unfollowed |
+      assert_not marley.feed.include?(post_unfollowed)
+    end
+  end
+
 end

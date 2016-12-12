@@ -1,0 +1,22 @@
+* Gems are self-contained solutions to specific problems such as pagination and image upload
+
+* There are three essential components needed to develop web applications: a text editor, a filesystem navigator, and a command-line terminal
+
+* The rails new command creates a skeleton Rails application
+
+* Running rails new automatically runs the bundle install command after the file creation is done
+
+* Unless you specify a version number to the gem command, Bundler will automatically install the latest requested version of the gem
+
+* There are two common ways to specify a gem version range:
+      gem 'example', '>= 1.3.0'
+          This installs the latest version of the gem as long as it is greater than or equal to version 1.3.0
+
+      gem 'example', '~> 4.0.0'
+          This installs the gem as long as it is newer than version 4.0.0 and not newer than 4.1
+
+* Always run bundle install after changing the gem file
+
+* The rails server or rails s command runs a local webserver on a local system
+
+* MVC is an architectural pattern which enforces a separation between the data in the application and the code used to display it

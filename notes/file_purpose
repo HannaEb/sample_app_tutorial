@@ -40,3 +40,19 @@ Gemfile.lock  A list of gems used to ensure that all copies of the app use the s
 config.ru     A configuration file for Rack middleware
 
 .gitignore    Patterns for files that should be ignored by Git
+
+
+
+GET     /users          index     page to list all users
+
+GET     /users/1        show      page to show user with id 1
+
+GET     /users/new      new       page to make a new user
+
+GET     /users/1/edit   edit      page to edit user with id 1
+
+POST    /users          create    create a new user
+
+PATCH   /users/1        update    update user with id 1
+
+DELETE  /users/1        destroy   delete user with id 1

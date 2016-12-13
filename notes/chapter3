@@ -42,4 +42,27 @@
   application using a web browser
 
 * When developing an application, often code will start to 'smell', meaning that it gets ugly, bloated, or filled with
-  repetition. It is important to keep the code base clean by refactoring frequently.  
+  repetition. It is important to keep the code base clean by refactoring frequently.
+
+* Most browsers display the contents of the <title> tag at the top of the browser window and it is also important for
+  search engine optimization
+
+* The special setup function is automatically run before every test
+
+* <% ... %> executes the code inside, while <%= ... %> executes it and inserts the result into the template
+
+* The default Rails layout includes several additional lines:
+    - <%= csrf_meta_tags %>
+    - <%= stylesheet_link_tag ... %>
+    - <%= javascript_include_tag "application", ... %>
+  This code arranges to include the application stylesheet and JavaScript, which are part of the asset pipeline, together
+  with the Rails method csrf_meta_tags, which prevents CSRF, a type of malicious web attack
+
+* Rails views can contain static HTML or embedded Ruby
+
+* Test-driven development uses a "Red, Green, Refactor" cycle
+
+* Rails layouts allow the use of a common template for pages in our application, thereby eliminating duplication
+
+* --without production is a "remembered option" which means it will be included automatically the next time we run bundle
+  install

@@ -1,0 +1,18 @@
+
+* By default, the Rails console starts in a development environment
+
+* Using puts automatically includes a new line after the string gets printed, the closely related print command prints the
+  raw string without the extra line
+
+* The technical name for an extra line of blank space is a newline, typically represented by "backslash n" \n
+
+* The important difference between single- and double-quoted strings is that Ruby won't interpolate single-quoted strings
+
+* Single-quoted strings are often useful because they are truly literal, containing exactly the characters you type
+
+* Ruby functions have an implicit return, meaning they return the last statement evaluated
+
+* If a function contains a default argument it is possible to leave out the argument entirely. In this case it automatically
+  takes the given default value
+
+* 

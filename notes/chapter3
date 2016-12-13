@@ -1,0 +1,45 @@
+
+* The $ rails generate command creates a substantial number of auxiliary files. To undo the generation use we can use
+  $ rails destroy followed by the name of the generated element
+
+* We can undo a single migration step using $ rails db:rollback
+
+* To go all the way back to the beginning we can use $ rails db:migrate VERSION=0
+
+* GET is the most common HTTP operation, used for reading data on the web, it just means 'get a page'. POST is the next
+  most common operation, it is the request sent by your browser when you submit a form. In Rails apps, POST requests are
+  typically used for creating things. The other two verbs, PATCH and DELETE, are designed for updating and destroying things
+  on the remote server.
+
+* In Rails, when visiting a URL (e.g. /static_pages/home), Rails looks in the Static Pages controller and executes the code
+  in the home action, and then renders the view.
+
+* Developed over the course of building an app, a test suite serves as a safety net and as executable documentation of the
+  application source code. When done right, writing tests also allows us to develop faster despite requiring extra code,
+  because we'll end up wasting less time trying to track down bugs.
+
+* Writing tests has three benefits:
+      1. Tests protect against regression, where a functioning feature stops working for some reason
+      2. Tests allow code to be refactored with greater confidence
+      3. Tests act as a client for the application code, thereby helping determine its design and its interface with other
+         parts of the system
+
+* Guidelines on when we should test first:
+    - When a test is especially short or simple compared to the application code it tests, lean toward writing the test
+      first
+    - When the desired behaviour isn't yet crystal clear, lean toward writing the application code first, then write a test
+      to codify the result
+    - Because security is a top priority, err on the side of writing tests of the security model first
+    - Whenever a bug is found, write a test to reproduce it and protect against regressions, then write the application
+      code to fix it
+    - Lean against writing tests for code likely to change in the future
+    - Write tests before refactoring code, focussing on testing error-prone code that's especially likely to break
+
+* In practice, the guidelines above mean that we'll usually write controller and model tests first and integrations tests
+  second
+
+* Integration tests are especially powerful, as they allow us to simulate the actions of a user interacting with our
+  application using a web browser
+
+* When developing an application, often code will start to 'smell', meaning that it gets ugly, bloated, or filled with
+  repetition. It is important to keep the code base clean by refactoring frequently.  

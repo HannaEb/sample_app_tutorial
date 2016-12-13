@@ -15,4 +15,15 @@
 * If a function contains a default argument it is possible to leave out the argument entirely. In this case it automatically
   takes the given default value
 
-* 
+* Modules give us a way to package together related methods, which can then be mixed in to Ruby classes using include
+
+* If we trace back the class hierarchy of any Ruby object far enough every class in Ruby ultimately inherits from
+  BasicObject, which has no superclass itself
+
+* Ruby classes can be opened and modified, allowing ordinary people to add methods to them. However, it's considered bad
+  form to do so without having a really good reason
+
+* Attribute accessors create "getter" and "setter" methods that allow us to retrieve (get) and assign (set) instance
+  variables
+
+* Ruby blocks are a flexible construct that (among other things) allow natural iteration over enumerable data structures

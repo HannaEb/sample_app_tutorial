@@ -54,3 +54,15 @@
 * Sass allows us to define variables to eliminate duplication and write more expressive code
 
 * A common pattern in stylesheets is having rules that apply to nested elements
+
+* RAils allows us to define custom routing rules, thereby providing named routes
+
+* The difference between root_path and root_url is that the latter includes the full URL. The HTTP standard technically
+  requires a full URL after redirects, though in most browsers it will work either way
+
+* get '/help', to: 'static_pages#help' routes a get request for the URL /help to the help action in the Static Pages
+  controller. This creates two named routes, help_path and help_url
+
+* Rails partials are used to place markup in a separate file for convenience
+
+* Integration tests effectively simulate a browser clicking from page to page 

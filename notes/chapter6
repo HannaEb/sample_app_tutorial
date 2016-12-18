@@ -39,3 +39,22 @@
 * There are two basic ways to update objects after we've created them:
     1. We assign attributes individually, then save them
     2. We updated multiple attributes using the update_attributes methods which automatically saves the update
+
+* Active Record allows us to enforce constraints on values by using validations
+
+* Examples of validations are presence, length, format and uniqueness
+
+* The application code for email format validation uses the format validation, which works like this:
+  validates :email, format: { with: /<regular expression>/ }
+
+* Example of a pragmatic regex to validate emails: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+
+* When validating the uniqueness of email addresses it is important to remember that email addresses are typically
+  processed as if they were case-insensitive, the validation needs to incorporate this
+    validates :email, uniqueness: { case_sensitive: false }
+
+* Defining a database index improves lookup efficiency while allowing enforcement of uniqueness at the database level
+
+* A callback is a method that gets invoked at a particular point in the lifecycle of an Active Record object
+
+* We can add a secure password to a model using the built-in has_secure_password method

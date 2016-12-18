@@ -1,0 +1,56 @@
+
+* Mockups are rough sketches of what an app will eventually look like. In a web context they are often called wireframes
+
+* The HTML5 standard is relatively new and some browsers don't fully support it but we can use some JavaScript code known as
+  an "HTML5 shim (or shiv)" to work around the issue
+
+* The main difference between classes and ids that can be assigned to HTML elements is that classes can be used multiple
+  times on a page, but ids can be used only once
+
+* The alt attribute in an image tag is what will be displayed if the page is accessed by a program that can't display images
+
+* Bootstrap is a framework from Twitter that makes it easy to add nice web design and user interface elements to an HTML5
+  application. It automatically makes the app's design responsive, ensuring that it looks sensible across a wide range of
+  devices
+
+* In Rails Bootstrap can be added with the bootstrap-sass gem. Bootstrap natively uses the Less CSS language for making
+  dynamic stylesheets, but the Rails asset pipeline supports the Sass language by default, so bootstrap-sass converts Less to
+  Sass and makes all the necessary Bootstrap files available to the current application
+
+* In general, CSS rules refer either to a class, an id, an HTML tag or some combination thereof, followed by a list of
+  styling commands
+
+* The dot . indicates that the rule styles a class, the hash # indicates that the rule styles an id
+
+* We insert partials into the layout with a call to render
+
+* The Rails asset pipeline significantly simplifies the production and management of static assets such as CSS, JavaScript,
+  and images. From the perspective of a typical Rails developer, there are three main features to understand about the
+  asset pipeline: asset directories, manifest files, and preprocessor engines.
+
+* The Rails asset pipeline uses three standard directories for static assets, each with its own purpose:
+    - app/assets: assets specific to the present application
+    - lib/assets: assets for libraries written by your dev team
+    - vendor/assets: assets from third-party vendors
+  Each of these directories has a subdirectory for each asset class: images, JavaScript and CSS
+
+* Once you've placed your assets in their logical locations, you can use manifest files to tell Rails (via the Sprockets
+  gem) how to combine them to form single files (*= require_tree *= require_self)
+
+* After you've assembled your assets, Rails prepares them for the site template by running them through several preprocessing
+  engines and using the manifest files to combine them for delivery to the browser. We tell Rails which processor to use using
+  filename extensions. The three most common cases are .scss for Sass, .coffee for CoffeeScript, and .erb for embedded Ruby.
+  The preprocessor engines can slo be chained, e.g. example.js.coffee
+
+* The asset pipeline automatically results in assets that are optimized to be efficient in a production application. We
+  don't have to choose between speed and convenience: we can work with multiple nicely formatted files in development, and
+  then use the asset pipeline to make efficient files in production. It combines all the application stylesheets into one
+  CSS file and all the application JavaScript into one Javascript file, then minifies them to remove the unnecessary spacing
+  and indentation that bloats file size. The result is convenience in development and efficiency in production.
+
+* Sass supports a format called SCSS which adds features to CSS rather than defining an entirely new syntax. This means that
+  every valid CSS file is also a valid SCSS file
+
+* Sass allows us to define variables to eliminate duplication and write more expressive code
+
+* A common pattern in stylesheets is having rules that apply to nested elements

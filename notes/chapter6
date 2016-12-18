@@ -1,0 +1,41 @@
+
+* Examples of authentication and authorization systems for Rails include Clearance, Authlogic, Devise and CanCan
+
+* The default Rails solution to the problem of persistence is to use a database for long-term data storage, and the default
+  library for interacting with the database is called Active Record. Active Record comes with a host of methods for creating,
+  saving, and finding data objects, all without having to use the structured query language used by relational databases.
+  Rails also has a feature called migrations to allow data definitions to be written in pure Ruby, without having to learn an
+  SQL DDL. The effect is that Rails insulations you almost entirely from the details of the database.
+
+* $ rails generate model User name: string email:string
+
+* In contrast to the plural convention for controller names, model names are singular: a Users controller, but a User model
+
+* The above generate command automatically creates a new file called a migration. Migrations provide a way to alter the
+  structure of the database incrementally, so that our data model can adapt to changing requirements
+
+* The name of the migration file is prefixed by a timestamp based on when the migration was generated
+
+* The migration itself consists of a change method that determines the change to be made to the database
+
+* The table name in the database is plural even though the model name is singular. This is a linguistic convention followed
+  by Rails: a model represents a single user, whereas a database table consists of many users
+
+* We can run the migration, known as "migrating up", using the db:migrate command
+
+* The first time db:migrate is run, it creates a file called db/development.sqlite3 which is an SQLite database. We can
+  see the structure of the database by opening development.sqlite3 with DB Browser for SQLite.
+
+* $ rails console --sandbox starts the console in a sandbox which means that any modifications will be rolled back on exit
+
+* The save method returns true if it succeeds and false otherwise
+
+* Active Record provides several options for finding objects:
+    - User.find(1)
+    - User.find_by(email: "luni@cat.com")
+    - User.first
+    - User.all
+
+* There are two basic ways to update objects after we've created them:
+    1. We assign attributes individually, then save them
+    2. We updated multiple attributes using the update_attributes methods which automatically saves the update

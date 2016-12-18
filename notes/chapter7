@@ -1,0 +1,22 @@
+
+* The default environment for the Rails console is development but if you ever need to run a console in a different
+  environment you can pass the environment as a parameter to the console script:
+    $ rails console test
+
+* Development is also the default environment for the Rails server, but you can run it in a different environment:
+    $ rails server --environment production
+
+* If you view your app running in production, it won't work without a production database, which we can create:
+    $ rails db:migrate RAILS_ENV=production
+
+* A mixin allows a group of CSS rules to be packaged up and used for multiple elements
+
+* Adding resources :users to config.ru adds a working /users/1 URL and also endows the app with all the actions needed for a
+  RESTful Users resource, along with a large number of named routes for generating user URLs
+
+* In order to get the user show view to work, we need to define an @user instance variable in the corresponding show action
+  in the Users controller
+
+* Whenever you're confused about something in a Rails application, it's a good practice to put debugger close to the code
+  you think might be causing the trouble. Inspecting the state of the system using byebug is a powerful method for tracking
+  down application errors and interactively debugging your app. 

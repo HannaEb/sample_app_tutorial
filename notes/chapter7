@@ -9,7 +9,7 @@
 * If you view your app running in production, it won't work without a production database, which we can create:
     $ rails db:migrate RAILS_ENV=production
 
-* A mixin allows a group of CSS rules to be packaged up and used for multiple elements
+* A mixin allows a group of CSS rules to be packaged up and reused in multiple places
 
 * Adding resources :users to config.ru adds a working /users/1 URL and also endows the app with all the actions needed for a
   RESTful Users resource, along with a large number of named routes for generating user URLs
@@ -19,4 +19,46 @@
 
 * Whenever you're confused about something in a Rails application, it's a good practice to put debugger close to the code
   you think might be causing the trouble. Inspecting the state of the system using byebug is a powerful method for tracking
-  down application errors and interactively debugging your app. 
+  down application errors and interactively debugging your app.
+
+* The form_for helper method in Rails takes in an Active Record object and builds a form using the object's attributes
+    <%= form_for(@user) do |f| %>
+    <% end %>
+
+* The form_for helper method takes a block with one variable. When called with a method corresponding to an HTML form
+  element this variable returns code for that element specifically designed to set an attribute of the object.
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+* The key to creating a user in this case is the special name attribute. It's values allow Rails to construct an
+  initialization hash (via the params variable) for creating users using the values entered by the new user
+
+* Rails creates the form tag using the @user object. Because every Ruby objects knows its own class, Rails figures out that
+  @user is of class User. Moreover, since @user is a new user, Rails knows to construct a form with the post method which is
+  the proper verb for creating a new object.
+
+* @user = User.new(params[:user]) raises an error. It is insecure because it arranges to pass to User.new all data submitted
+  by a user. This means that using a command line HTTP client such as curls , any user could gain administrative access to
+  the site.
+
+* Instead, we use so-called strong parameters in the controller layer which allows us to specify which parameters are
+  required and which ones are permitted. We user a user_params method:
+  params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  @user = User.new(user_params)
+
+* Using a dedicated shared/ directory for partials expected to be used in views across multiple controllers is a common
+  Rails convention
+
+* The pluralize text helper takes an integer argument and then returns the number with a properly pluralized version of its
+  second argument
+  helper.pluralize(5, "error")
+
+* It is possible to render a template for the create action; however, the usual practice is to redirect to a different
+  page instead when the creation is successful
+
+* The Rails way to desplay a temporary message is to use a special method called a flash, e.g.
+    flash[:success] = "Welcome!"
+
+* $ rails db:migrate:reset resets the database
+
+* We can configure our production application to use SSL for secure communications and Puma for high performance

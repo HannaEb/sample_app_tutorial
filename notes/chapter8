@@ -19,3 +19,24 @@
   for the @user variable. This means that when constructing the new session form, we have to give form_for slightly more
   information. In particular, we need to indicate the name of the resource and the corresponding URL
     form_for(:session, url: login_path)
+
+* The special variant flash.now is specifically designed for displaying flash messages on rendered pages. Unlike the contents
+  of flash, the contents of flash.now disappear as soon as there is an additional request
+
+* Rails automatically generates a Sessions helper module when generating a Sessions controller. By including the module into
+  the base class of all controllers, the Application controller, we can arrange to make them available in our controllers as
+  well as in our views, where they are included automatically
+
+* In contrast to the persistent cookie created by the cookies method the temporary cookie created by the session method
+  expires immediately when the browser is closed
+
+* Unlike persistent sessions created using the cookies method, temporary sessions created using the session method are
+  automatically encrypted and there is no way for an attacker to use the session information to log in as the user
+
+* To activate Bootstrap's ability to make special features such as dropdown menus, we need to include Bootstrap's custom
+  JavaScript library in the Rails asset pipeline's application.js file
+    //=require bootstrap
+
+* Fixtures are a way of organizing data to be loaded into the test database
+
+* Integration tests can verify correct routes, database updates, and proper changes to the layout

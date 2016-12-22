@@ -1,0 +1,21 @@
+
+* HTTP is a stateless protocol, treating each request as an independent transaction that is unable to use information from
+  any previous requests which means there is no way within the HTTP to remember a user's identity from page to page.
+  Therefore, applications requiring user login must use a session.
+
+* A session is a semi-permanent connection between two computer, such as a client computer running a web browser and a server
+  running Rails
+
+* The most common techniques for implementing sessions in Rails involve using cookeis, which are small pieces of text placed
+  on the user's browser
+
+* It is convenient to model sessions as a RESTful resource: visiting the login page will render a form for new sessions,
+  logging in is handled by sending a post request to the create action (which creates a session), and logging out is handled
+  by sending a delete request to the destroy action, destroy the session
+
+* $ rails routes generates a complete list of the routes for the application
+
+* The main difference between a session form and a signup form is that we have no Session model and therefore no analogue
+  for the @user variable. This means that when constructing the new session form, we have to give form_for slightly more
+  information. In particular, we need to indicate the name of the resource and the corresponding URL
+    form_for(:session, url: login_path)

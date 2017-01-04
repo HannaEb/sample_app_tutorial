@@ -6,7 +6,7 @@
 * A session is a semi-permanent connection between two computer, such as a client computer running a web browser and a server
   running Rails
 
-* The most common techniques for implementing sessions in Rails involve using cookeis, which are small pieces of text placed
+* The most common techniques for implementing sessions in Rails involve using cookies, which are small pieces of text placed
   on the user's browser
 
 * It is convenient to model sessions as a RESTful resource: visiting the login page will render a form for new sessions,

@@ -1,0 +1,22 @@
+
+* Persistent cookies are vulnerable to session hijacking, in which an attacker uses a stolen remember token to log in
+  as a particular user
+
+* There are four main ways to steal cookies:
+    1. using a packet sniffer to detect cookies being passed over insecure networks
+    2. compromising a database containing remember tokens
+    3. using XSS
+    4. gaining physical access to a machine with a logged-in user
+
+* The urlsafe_base64 method from the SecureRandom module in the Ruby standard library returns a random string of length
+  22 composed of the characters A-Z, a-z, 0-9, - and _
+
+* A cookie consists of two pieces of information, a value and an optional expires date
+
+* cookies.permanent[:remember_token] = remember_token causes Rails to set the expiration to 20.years.from_now
+  automatically
+
+* Bootstrap uses the CSS classes checkbox and inline to put the checkbox and the text in the same line
+
+* Using the cookies method, we create a persistent session by placing a permanent remember token cookie in the
+  browser

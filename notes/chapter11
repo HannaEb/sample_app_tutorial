@@ -1,0 +1,14 @@
+
+* Metaprogramming is essentially a program that writes a program
+
+* Like sessions, account activations can be modeled as a resource despite not being Active Record objects
+
+* Rails can generate Action Mailer actions and views to send email
+
+* As with ordinary actions and views, instance variables defined in mailer actions are available in mailer views
+
+* Account activations use e generated token to create a unique URL for activating users
+
+* Account activations use a hashed activation digest to securely identify valid activation requests
+
+* We can send email in production using SendGrid

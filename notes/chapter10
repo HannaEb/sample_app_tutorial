@@ -1,0 +1,30 @@
+
+* The use of target="_blank" is a neat trick to get the browser to open the page in a new window or tab, which is sometimes
+  convenient behaviour when linking to third-party sites
+
+* In the context of web applications, authentication allows us to identify users of our site, while authorization lets us
+  control what they can do
+
+* Before filters use the before_action command to arrange for a particular method to be called before the given controller
+  actions
+
+* By default, before filters apply to every action in a controller, so we need to restrict the filter by passing the
+  appropriate only: options hash
+
+* Faker gem
+
+* Rails uses the standard file db/seeds.rb to seed the database with sample data using rails db:seed
+
+* There are several pagination methods available in Rails, one of the simplest and most robust is called
+  will_paginate (will_paginate gem and bootstrap-will_paginate gem)
+
+* The will_paginate method automatically looks for an @users object inside a users view and then displays pagination
+  links to access other pages
+
+* Web browsers can't send delete requests natively, so Rails fakes them with JavaScript. This means that the delete links
+  won't work if the user has JavaScript disabled. If you must support non-JavaScript-enabled browsers you can fake a
+  delete request using a form and a post request, which works even without JavaScript
+
+* Safe updating through the web is enforced using strong parameters
+
+* A boolean attribute called admin on the User model automatically creates an admin? boolean method on user objects

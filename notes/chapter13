@@ -1,0 +1,30 @@
+
+* A multiple key index allows Active Record to use both keys at the same time
+
+* The Rails method default_scope can among other thing be used to set the default order in which elements are retrieved from
+  the database
+  default_scope -> { order(created_at: :desc) }
+
+* The stabby lambda -> takes in a block and returns a Proc, which can then be evaluated with the call method
+
+* SQL injection is a serious security hole and therefore it is a good idea to always escape variables injected into SQL statements
+
+* The inclusion of html: { multipart: true } in the arguments to form_for is necessary for file uploads
+
+* The has_many/belongs_to combination gives rise to methods that work through the association
+
+* Scopes take anonymous functions as arguments
+
+* The dependent: :destroy option causes objects to be destroyed at the same time as associated objects
+
+* Pagination and object counts can both be performed trough associations, leading to automatically efficient code
+
+* Fixtures support the creation of associations
+
+* It is possible to pass variables to Rails partials
+
+* The where method can be used to perform Active Record selections
+
+* We can enforce secure operations by always creating and destroying dependent objects through their association
+
+* We can upload and resize images using CarrierWave

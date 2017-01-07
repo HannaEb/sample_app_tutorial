@@ -1,0 +1,12 @@
+
+* Ajax allows web pages to send requests asynchronously to the server without leaving the page
+
+* Rail's has_many :through allows the modeling of complicated data relationships
+
+* The has_many method takes several optional arguments, including the object class name and the foreign key
+
+* Rails routing supports nested routes
+
+* The where method is a flexible and powerful way to create database queries
+
+* Rails supports issuing lower-level SQL queries if needed
